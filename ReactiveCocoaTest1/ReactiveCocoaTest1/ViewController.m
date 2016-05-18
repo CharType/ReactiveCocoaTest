@@ -4,7 +4,7 @@
 //
 //  Created by 程倩 on 16/5/12.
 //  Copyright © 2016年 CQ. All rights reserved.
-//
+//对应技术博客地址：http://blog.csdn.net/u013232867
 
 #import "ViewController.h"
 #import "Header.h"
@@ -13,10 +13,12 @@
 @interface ViewController ()
 @property(nonatomic,strong)id<RACSubscriber> subscriber;
 @property(nonatomic,strong)RACDisposable *disposable;
-
+@property(nonatomic,strong)RACSubject *signal;
 @property(nonatomic,strong)UIButton *button;
 @property(nonatomic,strong)UILabel *label;
 @property(nonatomic,strong)UITextField *textfield;
+@property (weak, nonatomic) IBOutlet UITextField *textfield1;
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 @end
 
 @implementation ViewController
@@ -24,36 +26,237 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
- 
+   
+}
+
+-(void)throttle
+{
+    RACSubject *signal = [RACSubject subject];
     
-    // 创建信号
-    RACSubject *subject = [RACSubject subject];
+    _signal = signal;
     
-    RACSignal *signal = [subject map:^id(id value) {
-        // 当原信号发送数据的时候就会来调用这个block,修改原信号的内容
-        value  = @([value floatValue] +1.0);
-        // 返回值就是修改后的原信号的内容
-        return value;
+    // 节流，在一定时间（1秒）内，不接收任何信号内容，过了这个时间（1秒）获取最后发送的信号内容发出。
+    [[signal throttle:1] subscribeNext:^(id x) {
+        
+        NSLog(@"%@",x);
+    }];
+    
+    [signal sendNext:@"100"];
+    [signal sendNext:@"1000"];
+    //输出 2016-05-18 17:14:24.841 ReactiveCocoaTest1[6097:299606] 1000
+}
+
+-(void)replay
+{
+    //replay重放：当一个信号被多次订阅,反复播放内容
+    //没有明白这个有何意义
+    RACSignal *signal = [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        
+        
+        [subscriber sendNext:@1];
+        [subscriber sendNext:@2];
+        
+        return nil;
+    }] replay];
+    
+    [signal subscribeNext:^(id x) {
+        
+        NSLog(@"第一个订阅者%@",x);
+        
+    }];
+    
+    [signal subscribeNext:^(id x) {
+        
+        NSLog(@"第二个订阅者%@",x);
+        
+    }];
+}
+-(void)retry
+{
+    //重试 ：只要失败，就会重新执行创建信号中的block,直到成功
+    __block int i = 0;
+    [[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        
+        if (i == 10) {
+            [subscriber sendNext:@1];
+        }else{
+            NSLog(@"接收到错误");
+            [subscriber sendError:nil];
+        }
+        i++;
+        
+        return nil;
+        
+    }] retry] subscribeNext:^(id x) {
+        
+        NSLog(@"%@",x);
+        
+    } error:^(NSError *error) {
+        
+    }];
+    /*
+     输出：
+     2016-05-18 17:07:27.494 ReactiveCocoaTest1[5695:293689] 接收到错误
+     2016-05-18 17:07:27.522 ReactiveCocoaTest1[5695:293689] 接收到错误
+     2016-05-18 17:07:27.523 ReactiveCocoaTest1[5695:293689] 接收到错误
+     2016-05-18 17:07:27.523 ReactiveCocoaTest1[5695:293689] 接收到错误
+     2016-05-18 17:07:27.523 ReactiveCocoaTest1[5695:293689] 接收到错误
+     2016-05-18 17:07:27.524 ReactiveCocoaTest1[5695:293689] 接收到错误
+     2016-05-18 17:07:27.524 ReactiveCocoaTest1[5695:293689] 接收到错误
+     2016-05-18 17:07:27.525 ReactiveCocoaTest1[5695:293689] 接收到错误
+     2016-05-18 17:07:27.525 ReactiveCocoaTest1[5695:293689] 接收到错误
+     2016-05-18 17:07:27.525 ReactiveCocoaTest1[5695:293689] 接收到错误
+     2016-05-18 17:07:27.525 ReactiveCocoaTest1[5695:293689] 1
+     */
+}
+
+-(void)delay
+{
+    [[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [subscriber sendNext:@"100"];
+        
+        return nil;
+    }] delay:2] subscribeNext:^(id x) {
+        //调用[subscriber sendNext:@"100"] 2秒之后执行这个block
+        NSLog(@"%@",x);
+    }];
+}
+-(void)interval
+{
+    //每隔一秒钟就会发出信号
+    [[RACSignal interval:1 onScheduler:[RACScheduler currentScheduler]] subscribeNext:^(id x) {
+        NSLog(@"%@",x);
+    }];
+}
+
+-(void)timeout{
+    RACSignal *signal = [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [subscriber sendNext:@"100"];
+        return nil;
+    }] timeout:1 onScheduler: [RACScheduler currentScheduler]];
+    
+    [signal subscribeNext:^(id x) {
+        NSLog(@"%@",x);
+    } error:^(NSError *error) {
+        
+        NSLog(@"1秒后会自动调用");
+    }];
+}
+
+-(void)doNextdoCompleted
+{
+    RACSignal *signal = [[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [subscriber sendNext:@"100"];
+        
+        [subscriber sendCompleted];
+        NSLog(@"发送完毕");
+        return nil;
+    }] doNext:^(id x) {
+        // 执行[subscriber sendNext:@100];之前会调用这个Block
+        NSLog(@"doNext%@",x);
+    }] doCompleted:^{
+        //执行[subscriber sendCompleted];之前调用这个block
+        NSLog(@"doCompleted");;
     }];
     
     [signal subscribeNext:^(id x) {
         NSLog(@"%@",x);
     }];
-    
-    [subject sendNext:@"999"];
-    
-    
-   
-    
-    
-    
-    
-    
-    
-    
-    
-   
+    /*
+     输出：
+     2016-05-18 15:42:53.720 ReactiveCocoaTest1[4966:252147] doNext100
+     2016-05-18 15:42:53.720 ReactiveCocoaTest1[4966:252147] 100
+     2016-05-18 15:42:53.720 ReactiveCocoaTest1[4966:252147] doCompleted
+     2016-05-18 15:42:53.720 ReactiveCocoaTest1[4966:252147] 发送完毕
+     */
 }
+
+-(void)skip
+{
+    self.textfield1.text = @"12";
+    // 跳过第N个信号不接受
+    [[self.textfield1.rac_textSignal skip:1] subscribeNext:^(id x) {
+        NSLog(@"%@",x);
+    }];
+}
+
+
+
+-(void)takeUntil
+{
+    RACSubject *subject = [RACSubject subject];
+    
+    [[subject takeUntil:subject] subscribeNext:^(id x) {
+        NSLog(@"%@",x);
+    }];
+    
+    [subject sendNext:@"111"];
+    
+    [subject sendCompleted];
+}
+
+-(void)takeLast
+{
+    RACSubject *subject = [RACSubject subject];
+    //只取最后两次的信号
+    [[subject takeLast:2] subscribeNext:^(id x) {
+        NSLog(@"%@",x);
+    }];
+    
+    [subject sendNext:@"123456"];
+    [subject sendNext:@"12346"];
+    [subject sendNext:@"last1"];
+    [subject sendNext:@"last2"];
+    [subject sendCompleted];//订阅者必须调用完成
+    //输出
+    /*
+     2016-05-18 15:04:36.700 ReactiveCocoaTest1[3220:219323] last1
+     2016-05-18 15:04:36.701 ReactiveCocoaTest1[3220:219323] last2
+     */
+}
+-(void)take
+{
+    RACSubject *subject = [RACSubject subject];
+    //只取前两次的信号
+    [[subject take:2] subscribeNext:^(id x) {
+        NSLog(@"%@",x);
+    }];
+    
+    [subject sendNext:@"123456"];
+    [subject sendNext:@"12346"];
+    [subject sendNext:@"123456"];
+    [subject sendNext:@"12346"];
+}
+-(void)distinctUntilChanged
+{
+    RACSubject *subject = [RACSubject subject];
+    //当上一次的值和这次的值有明显变化的时候就会发出信号，否则会忽略掉
+    //一般用来刷新UI界面，当数据有变化的时候才会刷新
+    [[subject distinctUntilChanged] subscribeNext:^(id x) {
+        NSLog(@"%@",x);
+    }];
+    
+    [subject sendNext:@"123456"];
+    [subject sendNext:@"12346"];
+}
+-(void)ignore
+{
+    // 内部调用filter过滤，忽略掉ignore的值
+    [[self.textfield1.rac_textSignal ignore:@"123"] subscribeNext:^(id x) {
+        NSLog(@"%@",x);
+    }];
+}
+-(void)filter
+{
+    //每次信号发出都会先执行过滤条件判断
+    [[self.textfield1.rac_textSignal filter:^BOOL(NSString  *value) {
+        // 当条件判断等于YES的时候才会调用订阅的block
+        return  value.length>5;
+    }] subscribeNext:^(id x) {
+        self.loginBtn.enabled = YES;
+    } ];
+}
+
 -(void)reduce
 {
     //reduce:用于信号发出的内容是元组，把信号发出的元组聚合成一个值

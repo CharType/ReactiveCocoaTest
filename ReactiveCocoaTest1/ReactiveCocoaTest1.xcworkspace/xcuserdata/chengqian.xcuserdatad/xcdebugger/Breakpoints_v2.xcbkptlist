@@ -57,198 +57,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACSignal.m"
-            timestampString = "485167352.02689"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "298"
-            endingLineNumber = "298"
-            landmarkName = "-subscribeNext:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACSignal.m"
-            timestampString = "485165874.505871"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "-bind:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACSignal.m"
-            timestampString = "485167352.02689"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "-bind:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACSignal.m"
-            timestampString = "485167352.02689"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "-bind:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__29-[RACSignal(RACStream) bind:]_block_invoke"
-                  moduleName = "ReactiveCocoa"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chengqian/%E6%B5%8B%E8%AF%95/RAC/ReactiveCocoaTest/ReactiveCocoaTest1/Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACSignal.m"
-                  timestampString = "485229669.222311"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "168"
-                  endingLineNumber = "168"
-                  offsetFromSymbolStart = "678">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__29-[RACSignal(RACStream) bind:]_block_invoke131"
-                  moduleName = "ReactiveCocoa"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chengqian/%E6%B5%8B%E8%AF%95/RAC/ReactiveCocoaTest/ReactiveCocoaTest1/Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACSignal.m"
-                  timestampString = "485229669.222463"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "168"
-                  endingLineNumber = "168"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACSignal.m"
-            timestampString = "485167352.02689"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
-            landmarkName = "-bind:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACSignal.m"
-            timestampString = "485167352.02689"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
-            landmarkName = "-bind:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__29-[RACSignal(RACStream) bind:]_block_invoke94"
-                  moduleName = "ReactiveCocoa"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chengqian/%E6%B5%8B%E8%AF%95/RAC/ReactiveCocoaTest/ReactiveCocoaTest1/Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACSignal.m"
-                  timestampString = "485229669.224088"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "149"
-                  endingLineNumber = "149"
-                  offsetFromSymbolStart = "308">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__29-[RACSignal(RACStream) bind:]_block_invoke_2104"
-                  moduleName = "ReactiveCocoa"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chengqian/%E6%B5%8B%E8%AF%95/RAC/ReactiveCocoaTest/ReactiveCocoaTest1/Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACSignal.m"
-                  timestampString = "485229669.224418"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "149"
-                  endingLineNumber = "149"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACSignal.m"
-            timestampString = "485167346.360221"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "-bind:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACPassthroughSubscriber.m"
-            timestampString = "485168519.325908"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "-sendNext:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACSubject.m"
             timestampString = "485167948.333341"
             startingColumnNumber = "9223372036854775807"
@@ -266,7 +74,7 @@
                   moduleName = "ReactiveCocoa"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chengqian/%E6%B5%8B%E8%AF%95/RAC/ReactiveCocoaTest/ReactiveCocoaTest1/Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACSubject.m"
-                  timestampString = "485229669.227738"
+                  timestampString = "485249855.459353"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "92"
@@ -281,7 +89,7 @@
                   moduleName = "ReactiveCocoa"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chengqian/%E6%B5%8B%E8%AF%95/RAC/ReactiveCocoaTest/ReactiveCocoaTest1/Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACSubject.m"
-                  timestampString = "485229669.228187"
+                  timestampString = "485249855.459618"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "92"
@@ -313,13 +121,109 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACPassthroughSubscriber.m"
-            timestampString = "485168519.325908"
+            filePath = "Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACStream.m"
+            timestampString = "485249130.874922"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "-initWithSubscriber:signal:disposable:"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "-skip:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__30-[RACStream(Operations) skip:]_block_invoke"
+                  moduleName = "ReactiveCocoa"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chengqian/%E6%B5%8B%E8%AF%95/RAC/ReactiveCocoaTest/ReactiveCocoaTest1/Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACStream.m"
+                  timestampString = "485249855.461991"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__30-[RACStream(Operations) skip:]_block_invoke_2"
+                  moduleName = "ReactiveCocoa"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chengqian/%E6%B5%8B%E8%AF%95/RAC/ReactiveCocoaTest/ReactiveCocoaTest1/Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACStream.m"
+                  timestampString = "485249855.462225"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACStream.m"
+            timestampString = "485249135.102578"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "-skip:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RACStream(Operations) skip:]"
+                  moduleName = "ReactiveCocoa"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chengqian/%E6%B5%8B%E8%AF%95/RAC/ReactiveCocoaTest/ReactiveCocoaTest1/Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACStream.m"
+                  timestampString = "485249855.463773"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "158"
+                  endingLineNumber = "158"
+                  offsetFromSymbolStart = "51">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__30-[RACStream(Operations) skip:]_block_invoke"
+                  moduleName = "ReactiveCocoa"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chengqian/%E6%B5%8B%E8%AF%95/RAC/ReactiveCocoaTest/ReactiveCocoaTest1/Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACStream.m"
+                  timestampString = "485249855.464012"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "159"
+                  endingLineNumber = "159"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACStream.m"
+            timestampString = "485249185.595459"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "-skip:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -329,13 +233,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACDynamicSignal.m"
-            timestampString = "485168250.143834"
+            filePath = "Pods/ReactiveCocoa/ReactiveCocoa/Objective-C/RACPassthroughSubscriber.m"
+            timestampString = "485249894.170979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "-subscribe:"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "-sendNext:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
